@@ -1,0 +1,14 @@
+{
+  "name": "curriculo-html",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "node scripts/server.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^23.11.1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
