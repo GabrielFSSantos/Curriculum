@@ -1,0 +1,121 @@
+{
+  "page": {
+    "title": "Currículo — Gabriel Felipe Souza Santos",
+    "exportButton": "Exportar PDF",
+    "languageButton": "English"
+  },
+  "sidebar": {
+    "professionalTitle": "Power Apps • Backend • Dados e Analytics",
+    "lattes": "Currículo Lattes"
+  },
+  "sections": {
+    "contact": "Contato",
+    "skills": "Competências",
+    "tools": "Ferramentas",
+    "softSkills": "Habilidades",
+    "summary": "Resumo Profissional",
+    "experience": "Experiência Profissional",
+    "education": "Formação",
+    "courses": "Cursos",
+    "activities": "Atividades Complementares"
+  },
+  "skills": {
+    "automation": "Automações",
+    "lowCode": "Soluções Low-Code",
+    "serviceArchitecture": "Arquitetura de Serviços",
+    "dataGovernance": "Governança de Dados"
+  },
+  "softSkills": {
+    "teamwork": "Trabalho em equipe e colaboração com stakeholders",
+    "communication": "Comunicação clara e organização",
+    "requirements": "Levantamento e compreensão de requisitos",
+    "leadership": "Liderança, iniciativa e responsabilidade",
+    "problemSolving": "Resolução de problemas",
+    "adaptability": "Agilidade e adaptabilidade",
+    "prioritization": "Priorização e foco em resultados"
+  },
+  "header": {
+    "role": "Desenvolvedor Power Apps • Backend • Analista de Dados",
+    "objective": "Objetivo: atuar em tecnologia, com foco em desenvolvimento backend e interesse em soluções orientadas a dados, contribuindo para criar sistemas escaláveis e bem estruturados, aplicando boas práticas de engenharia e evoluindo continuamente para gerar impacto real no produto e no negócio."
+  },
+  "summary": {
+    "text": "Desenvolvedor com experiência em <strong>Power Apps, Power Fx, Dataverse e Power BI</strong>, atuando na criação de aplicações internas, regras de negócio, controles de acesso, cadastros, filtros, coleções, integrações e fluxos de gestão. Possuo também experiência em <strong>desenvolvimento backend com TypeScript e Node.js</strong>, construção de APIs e integração com bancos de dados relacionais e não relacionais. Minha trajetória inclui projetos de <strong>dados e automação industrial</strong>, com atuação em governança, monitoramento de processos, estruturação de informações e apoio à tomada de decisão utilizando ferramentas como InfluxDB, Node-RED, Grafana e Power BI."
+  },
+  "experience": {
+    "neurosia": {
+      "meta": "Desenvolvedor Power Apps<br />Contrato temporário<br />Abr/2026 – Atual<br />Remoto",
+      "item1": "Desenvolvimento e evolução de <strong>soluções internas com Power Apps</strong>, Dataverse e ferramentas do ecossistema Microsoft, incluindo aplicações integradas ao Microsoft Teams.",
+      "item2": "Criação de telas, regras de negócio, controles de acesso, cadastros, filtros, coleções, integrações e fluxos de gestão para cerimônias, grupos, usuários, indicadores e processos operacionais.",
+      "item3": "Otimização da experiência do usuário, correção de inconsistências, melhoria de performance, governança das informações e estruturação de dados para apoiar a tomada de decisão.",
+      "technologies": "<strong>Tecnologias:</strong> Power Apps, Power Fx, Dataverse, Microsoft Teams, Power BI, automações e soluções low-code."
+    },
+    "ambevSaoLuis": {
+      "company": "AMBEV — Cervejaria de São Luís",
+      "meta": "Analista de Dados I<br />Abr/2024 – Jun/2026<br />Remoto",
+      "item1": "Atuação na <strong>otimização e padronização de rotinas</strong> e no monitoramento de processos, apoiando a tomada de decisão e o alinhamento com metas operacionais.",
+      "item2": "Responsável por iniciativas de <strong>governança de dados</strong>, estruturação de informações e disseminação de boas práticas junto às áreas envolvidas.",
+      "item3": "Condução de treinamentos sobre ferramentas, rotinas e processos implementados.",
+      "technologies": "<strong>Tecnologias:</strong> InfluxDB, Node-RED, Grafana, Power BI, OPC e PLC."
+    },
+    "ambevNovaMinas": {
+      "company": "AMBEV — Cervejaria Nova Minas",
+      "meta": "Estagiário de Análise e Desenvolvimento<br />Nov/2021 – Jul/2023<br />Sete Lagoas–MG",
+      "item1": "Atuação em análise e desenvolvimento com foco em <strong>Engenharia de Dados e Confiabilidade</strong>, contribuindo para a otimização de rotinas e o controle de processos industriais.",
+      "item2": "Apoio a iniciativas de governança de dados, padronização de procedimentos e melhoria de fluxos operacionais.",
+      "item3": "Realização de treinamentos e suporte técnico a diferentes áreas da fábrica.",
+      "technologies": "<strong>Tecnologias:</strong> MySQL, Node-RED, Grafana, Power BI, OPC e PLC."
+    },
+    "precato": {
+      "meta": "Desenvolvedor Back-end<br />Set/2021 – Out/2021<br />Remoto",
+      "item1": "Desenvolvimento e evolução de soluções voltadas à <strong>captação e ao tratamento de dados</strong>, com foco em confiabilidade e organização das informações.",
+      "item2": "Automatização de processos manuais e manutenção de sistemas internos utilizados pelos colaboradores da empresa.",
+      "technologies": "<strong>Tecnologias:</strong> Node.js e TypeScript."
+    },
+    "goclin": {
+      "meta": "Desenvolvedor Back-end<br />Dez/2020 – Abr/2021<br />Remoto",
+      "item1": "Desenvolvimento e manutenção do backend, evolução de funcionalidades e suporte à estabilidade e à performance do produto.",
+      "item2": "Atuação temporária no frontend com <strong>Vue.js</strong>, realizando ajustes em fluxos de navegação e integração com os serviços da aplicação.",
+      "technologies": "<strong>Tecnologias:</strong> Node.js, GraphQL, MongoDB, Amazon Elasticsearch Service, Vue.js, Vuex e Vue Router."
+    },
+    "inovaSolar": {
+      "meta": "Desenvolvedor Back-end — Freelancer<br />Fev/2020 – Nov/2020<br />Remoto",
+      "item1": "Desenvolvimento de uma plataforma web para o setor de energia solar, composta por site institucional, sistema interno de cálculos, loja virtual e blog.",
+      "item2": "Construção de <strong>API REST</strong>, modelagem de dados e integração entre os diferentes módulos da plataforma.",
+      "technologies": "<strong>Tecnologias:</strong> Node.js, MySQL e Sequelize."
+    },
+    "visao": {
+      "meta": "Diretor de Projetos — Web<br />Fev/2020 – Jul/2020<br />João Monlevade–MG",
+      "item1": "Desenvolvimento e gerenciamento de websites e sistemas web, com organização de entregas, acompanhamento de projetos e controle de qualidade.",
+      "item2": "Liderança de equipe, planejamento e distribuição de demandas, validação de entregas e mediação do relacionamento com clientes.",
+      "item3": "Realização de pré-diagnósticos para levantamento de necessidades e direcionamento das soluções."
+    }
+  },
+  "education": {
+    "master": {
+      "title": "Mestrado em Ciência da Computação",
+      "meta": "UFSJ — Campus Tancredo Neves<br />Ago/2025 – Atual<br /><span class=\"small\">São João del-Rei–MG</span>",
+      "researchLine": "<strong>Linha de pesquisa:</strong> Otimização e Inteligência Computacional",
+      "topic": "<strong>Tema:</strong> análise de sentimentos em notícias e documentos do mercado financeiro brasileiro utilizando NLP, FinBERT e modelos de linguagem, com o objetivo de construir indicadores contínuos de sentimento para empresas e setores da B3 e investigar sua relação com variáveis do mercado."
+    },
+    "bachelor": {
+      "title": "Bacharelado em Sistemas de Informação",
+      "meta": "UFOP — João Monlevade<br />Mar/2018 – Abr/2025<br /><span class=\"small\">Concluído</span>",
+      "thesis": "<strong>TCC:</strong> Desenvolvimento de um modelo preditivo para identificação de uso dos serviços de saúde com base nas características de brasileiros.",
+      "description": "Desenvolvimento e validação de um modelo com dados da Pesquisa Nacional de Saúde 2019, combinando segmentação de perfis, classificação supervisionada e validação cruzada para analisar padrões de utilização dos serviços de saúde."
+    },
+    "technical": {
+      "title": "Técnico em Metalurgia",
+      "meta": "IFMG — Ouro Branco<br />Fev/2015 – Dez/2017<br /><span class=\"small\">Concluído</span>",
+      "description": "Formação voltada a processos metalúrgicos, desenho técnico, segurança, controle de qualidade, planejamento de produção e análise de custos aplicados ao ambiente industrial."
+    }
+  },
+  "courses": {
+    "excel": "<strong>Excel Intermediário</strong> — UFOP, João Monlevade–MG — Set/2018 a Dez/2018 — <span class=\"small\">20 horas</span>",
+    "corelDraw": "<strong>CorelDRAW Básico</strong> — UFOP, João Monlevade–MG — Set/2018 a Dez/2018 — <span class=\"small\">20 horas</span>",
+    "proteus": "<strong>Proteus Intermediário</strong> — UFOP, João Monlevade–MG — Jun/2018 a Fev/2019 — <span class=\"small\">20 horas</span>"
+  },
+  "activities": {
+    "projects": "<strong>Projetos de extensão e pesquisa:</strong> EcoPilhas, Reciclagem com o uso da Matemática, Inclusão Digital para Educação de Jovens e Adultos e RECIMAT.",
+    "events": "<strong>Eventos e participação acadêmica:</strong> simulações de organismos internacionais como delegado, organização da Semana Nacional de Ciência e Tecnologia, Workshop Conexão Sicoob e Laboratório de Inovação."
+  }
+}

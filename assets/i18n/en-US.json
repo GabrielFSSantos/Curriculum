@@ -1,0 +1,121 @@
+{
+  "page": {
+    "title": "Resume — Gabriel Felipe Souza Santos",
+    "exportButton": "Export PDF",
+    "languageButton": "Português"
+  },
+  "sidebar": {
+    "professionalTitle": "Power Apps • Backend • Data & Analytics",
+    "lattes": "Lattes CV"
+  },
+  "sections": {
+    "contact": "Contact",
+    "skills": "Skills",
+    "tools": "Tools",
+    "softSkills": "Soft Skills",
+    "summary": "Professional Summary",
+    "experience": "Professional Experience",
+    "education": "Education",
+    "courses": "Courses",
+    "activities": "Additional Activities"
+  },
+  "skills": {
+    "automation": "Automation",
+    "lowCode": "Low-Code Solutions",
+    "serviceArchitecture": "Service Architecture",
+    "dataGovernance": "Data Governance"
+  },
+  "softSkills": {
+    "teamwork": "Teamwork and stakeholder collaboration",
+    "communication": "Clear communication and organization",
+    "requirements": "Requirements gathering and analysis",
+    "leadership": "Leadership, initiative and accountability",
+    "problemSolving": "Problem solving",
+    "adaptability": "Agility and adaptability",
+    "prioritization": "Prioritization and results focus"
+  },
+  "header": {
+    "role": "Power Apps Developer • Backend Developer • Data Analyst",
+    "objective": "Objective: to work in technology, with a focus on backend development and data-driven solutions, contributing to the creation of scalable, well-structured systems, applying sound engineering practices and continuously improving to generate real impact on products and business outcomes."
+  },
+  "summary": {
+    "text": "Developer with experience in <strong>Power Apps, Power Fx, Dataverse and Power BI</strong>, building internal applications, business rules, access controls, registration workflows, filters, collections, integrations and management processes. I also have experience in <strong>backend development with TypeScript and Node.js</strong>, API development and integration with relational and non-relational databases. My background includes <strong>data and industrial automation projects</strong>, with hands-on work in governance, process monitoring, information structuring and decision support using tools such as InfluxDB, Node-RED, Grafana and Power BI."
+  },
+  "experience": {
+    "neurosia": {
+      "meta": "Power Apps Developer<br />Temporary contract<br />Apr/2026 – Present<br />Remote",
+      "item1": "Development and evolution of <strong>internal solutions with Power Apps</strong>, Dataverse and Microsoft ecosystem tools, including applications integrated with Microsoft Teams.",
+      "item2": "Creation of screens, business rules, access controls, registration workflows, filters, collections, integrations and management flows for ceremonies, groups, users, indicators and operational processes.",
+      "item3": "Optimization of user experience, correction of inconsistencies, performance improvements, information governance and data structuring to support decision-making.",
+      "technologies": "<strong>Technologies:</strong> Power Apps, Power Fx, Dataverse, Microsoft Teams, Power BI, automation and low-code solutions."
+    },
+    "ambevSaoLuis": {
+      "company": "AMBEV — São Luís Brewery",
+      "meta": "Data Analyst I<br />Apr/2024 – Jun/2026<br />Remote",
+      "item1": "Worked on <strong>optimizing and standardizing routines</strong> and monitoring processes, supporting decision-making and alignment with operational goals.",
+      "item2": "Led initiatives related to <strong>data governance</strong>, information structuring and the dissemination of best practices across involved teams.",
+      "item3": "Delivered training on implemented tools, routines and processes.",
+      "technologies": "<strong>Technologies:</strong> InfluxDB, Node-RED, Grafana, Power BI, OPC and PLC."
+    },
+    "ambevNovaMinas": {
+      "company": "AMBEV — Nova Minas Brewery",
+      "meta": "Analysis and Development Intern<br />Nov/2021 – Jul/2023<br />Sete Lagoas, MG — Brazil",
+      "item1": "Worked in analysis and development with a focus on <strong>Data Engineering and Reliability</strong>, contributing to routine optimization and industrial process control.",
+      "item2": "Supported data governance initiatives, procedure standardization and improvements to operational workflows.",
+      "item3": "Provided training and technical support to different areas of the brewery.",
+      "technologies": "<strong>Technologies:</strong> MySQL, Node-RED, Grafana, Power BI, OPC and PLC."
+    },
+    "precato": {
+      "meta": "Backend Developer<br />Sep/2021 – Oct/2021<br />Remote",
+      "item1": "Developed and enhanced solutions for <strong>data collection and processing</strong>, with a focus on reliability and information organization.",
+      "item2": "Automated manual processes and maintained internal systems used by company employees.",
+      "technologies": "<strong>Technologies:</strong> Node.js and TypeScript."
+    },
+    "goclin": {
+      "meta": "Backend Developer<br />Dec/2020 – Apr/2021<br />Remote",
+      "item1": "Developed and maintained backend services, enhanced features and supported product stability and performance.",
+      "item2": "Temporarily supported frontend development with <strong>Vue.js</strong>, improving navigation flows and integrations with application services.",
+      "technologies": "<strong>Technologies:</strong> Node.js, GraphQL, MongoDB, Amazon Elasticsearch Service, Vue.js, Vuex and Vue Router."
+    },
+    "inovaSolar": {
+      "meta": "Backend Developer — Freelancer<br />Feb/2020 – Nov/2020<br />Remote",
+      "item1": "Developed a web platform for the solar energy sector, including a corporate website, internal calculation system, online store and blog.",
+      "item2": "Built a <strong>REST API</strong>, designed data models and integrated the platform's different modules.",
+      "technologies": "<strong>Technologies:</strong> Node.js, MySQL and Sequelize."
+    },
+    "visao": {
+      "meta": "Web Projects Director<br />Feb/2020 – Jul/2020<br />João Monlevade, MG — Brazil",
+      "item1": "Developed and managed websites and web systems, organizing deliveries, monitoring projects and ensuring service quality.",
+      "item2": "Led the team, planned and distributed tasks, validated deliveries and managed client relationships.",
+      "item3": "Conducted preliminary assessments to identify needs and guide solution design."
+    }
+  },
+  "education": {
+    "master": {
+      "title": "Master's Degree in Computer Science",
+      "meta": "UFSJ — Tancredo Neves Campus<br />Aug/2025 – Present<br /><span class=\"small\">São João del-Rei, MG — Brazil</span>",
+      "researchLine": "<strong>Research area:</strong> Optimization and Computational Intelligence",
+      "topic": "<strong>Research topic:</strong> sentiment analysis of news and documents from the Brazilian financial market using NLP, FinBERT and language models, with the goal of building continuous sentiment indicators for B3-listed companies and sectors and investigating their relationship with market variables."
+    },
+    "bachelor": {
+      "title": "Bachelor's Degree in Information Systems",
+      "meta": "UFOP — João Monlevade Campus<br />Mar/2018 – Apr/2025<br /><span class=\"small\">Completed</span>",
+      "thesis": "<strong>Undergraduate thesis:</strong> Development of a predictive model to identify the use of healthcare services based on the characteristics of the Brazilian population.",
+      "description": "Developed and validated a model using data from Brazil's 2019 National Health Survey, combining profile segmentation, supervised classification and cross-validation to analyze patterns in healthcare service usage."
+    },
+    "technical": {
+      "title": "Technical Diploma in Metallurgy",
+      "meta": "IFMG — Ouro Branco Campus<br />Feb/2015 – Dec/2017<br /><span class=\"small\">Completed</span>",
+      "description": "Technical education focused on metallurgical processes, technical drawing, safety, quality control, production planning and cost analysis applied to industrial environments."
+    }
+  },
+  "courses": {
+    "excel": "<strong>Intermediate Excel</strong> — UFOP, João Monlevade, MG — Sep/2018 to Dec/2018 — <span class=\"small\">20 hours</span>",
+    "corelDraw": "<strong>Basic CorelDRAW</strong> — UFOP, João Monlevade, MG — Sep/2018 to Dec/2018 — <span class=\"small\">20 hours</span>",
+    "proteus": "<strong>Intermediate Proteus</strong> — UFOP, João Monlevade, MG — Jun/2018 to Feb/2019 — <span class=\"small\">20 hours</span>"
+  },
+  "activities": {
+    "projects": "<strong>Extension and research projects:</strong> EcoPilhas, Recycling Through Mathematics, Digital Inclusion for Youth and Adult Education, and RECIMAT.",
+    "events": "<strong>Academic events and participation:</strong> international organization simulations as a delegate, organization of the National Science and Technology Week, Sicoob Connection Workshop and Sicoob Innovation Lab."
+  }
+}

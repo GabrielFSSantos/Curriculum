@@ -4,32 +4,40 @@
 
 /* ============================================================
    0) FONTE EMBUTIDA (PADRONIZA NAVEGADOR + PDF)
-   Coloque os arquivos em:
+
+   Estrutura esperada:
      assets/fonts/Inter-Regular.woff2
      assets/fonts/Inter-SemiBold.woff2
      assets/fonts/Inter-Bold.woff2
    ============================================================ */
+
 @font-face{
-  font-family: "Inter";
-  src: url("assets/Inter-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-family:"Inter";
+  src:url("assets/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight:400;
+  font-style:normal;
+  font-display:block;
 }
+
 @font-face{
-  font-family: "Inter";
-  src: url("assets/Inter-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  font-family:"Inter";
+  src:url("assets/fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight:600;
+  font-style:normal;
+  font-display:block;
 }
+
 @font-face{
-  font-family: "Inter";
-  src: url("assets/Inter-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  font-family:"Inter";
+  src:url("assets/fonts/Inter-Bold.woff2") format("woff2");
+  font-weight:700;
+  font-style:normal;
+  font-display:block;
 }
+
+/* ============================================================
+   1) VARIÁVEIS GERAIS
+   ============================================================ */
 
 :root{
   --ink:#1f2937;
@@ -38,143 +46,322 @@
   --bg:#f3f4f6;
   --line:#e5e7eb;
 
-  --accent: rgba(41, 62, 73, 1);
-  --accent-rgb: 41, 62, 73;
+  --accent:rgba(41, 62, 73, 1);
+  --accent-rgb:41, 62, 73;
 
   --sidebar:#fbfbfc;
   --chip:#eef2f4;
 
-  --page-w: 210mm;
+  --page-w:210mm;
 
-  --sidebar-w: 72mm;
-  --main-w: calc(var(--page-w) - var(--sidebar-w));
+  --sidebar-w:72mm;
+  --main-w:calc(var(--page-w) - var(--sidebar-w));
 
-  --pad-y: 12mm;
-  --pad-left: 14mm;
-  --pad-right: 16mm;
+  --pad-y:12mm;
+  --pad-left:14mm;
+  --pad-right:16mm;
+
+  --action-width:150px;
+  --action-gap:8px;
 }
 
-*{ box-sizing:border-box; }
-html, body{ height:100%; }
-html{ font-size: 14px; }
+/* ============================================================
+   2) RESET E CONFIGURAÇÕES GERAIS
+   ============================================================ */
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  min-height:100%;
+}
+
+html{
+  font-size:14px;
+}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
 
-  /* ✅ Fonte padronizada no projeto inteiro */
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.55;
-  -webkit-text-size-adjust: 100%;
+  font-family:"Inter", Arial, Helvetica, sans-serif;
+  font-size:14px;
+  line-height:1.55;
 
+  -webkit-text-size-adjust:100%;
   overflow:auto;
 
-  text-align: justify;
-  text-justify: inter-word;
+  text-align:justify;
+  text-justify:inter-word;
 }
 
-/* Centralização visual na tela */
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+/* ============================================================
+   3) CONTROLES DA PÁGINA
+
+   O contêiner é fixo no canto superior direito.
+   Os dois botões ficam empilhados verticalmente.
+
+   IMPORTANTE:
+   O posicionamento pertence à classe .page-actions.
+   A classe .export-btn NÃO deve usar position: fixed.
+   ============================================================ */
+
+.page-actions{
+  position:fixed;
+  top:16px;
+  right:16px;
+  z-index:9999;
+
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:var(--action-gap);
+
+  width:var(--action-width);
+}
+
+/* Estilo compartilhado pelos dois botões */
+.action-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:100%;
+  min-height:42px;
+  padding:10px 14px;
+
+  border:1px solid rgba(var(--accent-rgb), .25);
+  border-radius:10px;
+
+  background:var(--paper);
+  color:var(--ink);
+
+  font-family:"Inter", Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.2;
+  text-align:center;
+
+  cursor:pointer;
+
+  box-shadow:0 10px 25px rgba(0, 0, 0, .12);
+
+  transition:
+    border-color .18s ease,
+    background-color .18s ease,
+    color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.action-btn:hover{
+  border-color:rgba(var(--accent-rgb), .55);
+  background:var(--chip);
+  color:var(--accent);
+  transform:translateY(-1px);
+  box-shadow:0 12px 28px rgba(0, 0, 0, .14);
+}
+
+.action-btn:active{
+  transform:translateY(0);
+  box-shadow:0 8px 20px rgba(0, 0, 0, .10);
+}
+
+.action-btn:focus-visible{
+  outline:3px solid rgba(var(--accent-rgb), .22);
+  outline-offset:2px;
+}
+
+.action-btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:0 8px 18px rgba(0, 0, 0, .08);
+}
+
+/*
+  As classes específicas são mantidas para JavaScript,
+  acessibilidade e futuras customizações.
+
+  Atualmente, os dois botões possuem exatamente o mesmo visual.
+*/
+.export-btn,
+.language-btn{
+  position:static;
+  top:auto;
+  right:auto;
+  z-index:auto;
+}
+
+/* ============================================================
+   4) ÁREA DE VISUALIZAÇÃO
+   ============================================================ */
+
 .viewport{
   padding:24px 0;
 }
 
-/* Folha A4 (altura ilimitada) */
+/* Folha A4 com altura livre */
 .page{
   width:var(--page-w);
   margin:0 auto;
+
   background:var(--paper);
   border-radius:10px;
-  box-shadow: 0 18px 45px rgba(0,0,0,.10);
+  box-shadow:0 18px 45px rgba(0, 0, 0, .10);
+
   overflow:visible;
 }
 
-/* Colunas fixas */
+/* ============================================================
+   5) COLUNAS
+   ============================================================ */
+
 .columns{
   display:flex;
   align-items:flex-start;
 }
 
-/* Sidebar */
+/* ============================================================
+   6) SIDEBAR
+   ============================================================ */
+
 .sidebar{
   width:var(--sidebar-w);
+  flex:0 0 var(--sidebar-w);
+
   background:var(--sidebar);
   border-right:1px solid var(--line);
-  padding:var(--pad-y) var(--pad-left) 18mm var(--pad-left);
+
+  padding:
+    var(--pad-y)
+    var(--pad-left)
+    18mm
+    var(--pad-left);
 }
 
-/* Foto */
+/* ============================================================
+   7) FOTO
+   ============================================================ */
+
 .photo{
   width:100%;
   height:44mm;
-  border-radius:12px;
-  background:
-    radial-gradient(120px 80px at 30% 30%, rgba(var(--accent-rgb), .18), transparent 60%),
-    linear-gradient(135deg, rgba(var(--accent-rgb), .14), rgba(var(--accent-rgb), .06));
-  border:1px solid rgba(var(--accent-rgb), .25);
+
   margin:0 0 14px 0;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
+  border:1px solid rgba(var(--accent-rgb), .25);
+  border-radius:12px;
+
+  background:
+    radial-gradient(
+      120px 80px at 30% 30%,
+      rgba(var(--accent-rgb), .18),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(var(--accent-rgb), .14),
+      rgba(var(--accent-rgb), .06)
+    );
+
   color:var(--muted);
   font-weight:600;
   text-align:center;
+
   overflow:hidden;
 }
 
 .photo__img{
+  display:block;
   width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
 }
 
-/* Sidebar header */
-.sidebar-header{ margin-bottom:10px; }
+/* ============================================================
+   8) CABEÇALHO DA SIDEBAR
+   ============================================================ */
+
+.sidebar-header{
+  margin-bottom:10px;
+}
 
 .name{
+  margin:0;
+
   font-size:24px;
+  font-weight:700;
   line-height:1.1;
   letter-spacing:.2px;
-  margin:0;
+
   text-align:left;
-  font-weight: 700; /* usa Inter Bold */
 }
 
 .title{
   margin:6px 0 0 0;
+
   color:var(--muted);
-  font-weight:600; /* Inter SemiBold */
+
+  font-weight:600;
   text-align:left;
 }
 
-/* Sidebar sections */
+/* ============================================================
+   9) SEÇÕES DA SIDEBAR
+   ============================================================ */
+
 .sidebar-section{
   margin-top:16px;
   padding-top:14px;
+
   border-top:1px solid var(--line);
 }
 
 .sidebar-section__title{
   margin:0 0 10px 0;
+
+  color:var(--accent);
+
   font-size:13px;
+  font-weight:700;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color:var(--accent);
   text-align:left;
-  font-weight: 700;
 }
 
-/* Contato */
-.contact{ margin:0; padding:0; list-style:none; }
+/* ============================================================
+   10) CONTATO
+   ============================================================ */
+
+.contact{
+  margin:0;
+  padding:0;
+
+  list-style:none;
+}
 
 .contact__item{
   display:flex;
-  gap:10px;
   align-items:flex-start;
-  margin:8px 0;
+  gap:10px;
+
   min-width:0;
+  margin:8px 0;
 }
 
 .contact__value{
@@ -187,158 +374,284 @@ body{
   width:18px;
   height:18px;
   flex:0 0 18px;
-  color:var(--accent);
+
   margin-top:1px;
+
+  color:var(--accent);
 }
 
 .contact__link{
   display:inline-block;
+
   max-width:100%;
+
   color:inherit;
   text-decoration:none;
+
   border-bottom:1px dotted rgba(var(--accent-rgb), .55);
+
   overflow-wrap:anywhere;
   word-break:break-word;
 }
-.contact__link:hover{ border-bottom-style:solid; }
 
-/* Chips */
-.chips{ display:flex; flex-wrap:wrap; gap:8px; }
-
-.chip{
-  background:var(--chip);
-  border:1px solid rgba(var(--accent-rgb), .20);
-  color:#4b5563;
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:12px;
-  white-space:nowrap;
-  text-align:left;
+.contact__link:hover{
+  border-bottom-style:solid;
 }
 
-/* Lists */
-.list{ margin:0; padding-left:18px; color:#374151; }
-.list li{ margin:6px 0; }
+/* ============================================================
+   11) CHIPS
+   ============================================================ */
 
-/* Main */
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.chip{
+  padding:6px 10px;
+
+  background:var(--chip);
+  border:1px solid rgba(var(--accent-rgb), .20);
+  border-radius:999px;
+
+  color:#4b5563;
+
+  font-size:12px;
+  line-height:1.2;
+  text-align:left;
+  white-space:nowrap;
+}
+
+/* ============================================================
+   12) LISTAS
+   ============================================================ */
+
+.list{
+  margin:0;
+  padding-left:18px;
+
+  color:#374151;
+}
+
+.list li{
+  margin:6px 0;
+}
+
+/* ============================================================
+   13) CONTEÚDO PRINCIPAL
+   ============================================================ */
+
 .main{
   width:var(--main-w);
-  padding:var(--pad-y) var(--pad-right) 18mm var(--pad-right);
+  flex:0 0 var(--main-w);
+
+  padding:
+    var(--pad-y)
+    var(--pad-right)
+    18mm
+    var(--pad-right);
 }
 
 .main-header{
   display:flex;
   flex-direction:column;
   gap:8px;
+
   margin-bottom:10px;
 }
 
 .role{
+  margin:0;
+
+  color:var(--accent);
+
   font-size:16px;
   font-weight:700;
-  color:var(--accent);
-  margin:0;
   text-align:left;
 }
 
 .objective{
   margin:0;
+
   color:var(--muted);
+
   font-weight:600;
-  text-align: justify;
+  text-align:justify;
 }
 
-/* Blocks */
-.block{ margin-top:14px; }
+/* ============================================================
+   14) BLOCOS
+   ============================================================ */
+
+.block{
+  margin-top:14px;
+}
 
 .block-title{
   display:flex;
   align-items:center;
   gap:10px;
+
   margin:18px 0 10px 0;
 }
 
 .block-title h2{
-  font-size:15px;
   margin:0;
+
+  color:var(--accent);
+
+  font-size:15px;
+  font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--accent);
   text-align:left;
-  font-weight: 700;
 }
 
 .rule{
-  height:1px;
-  background:linear-gradient(90deg, rgba(var(--accent-rgb), .75), rgba(var(--accent-rgb), 0));
   flex:1;
+
+  height:1px;
   margin-top:2px;
+
+  background:linear-gradient(
+    90deg,
+    rgba(var(--accent-rgb), .75),
+    rgba(var(--accent-rgb), 0)
+  );
 }
 
-.summary{ margin:0; color:#374151; }
+.summary{
+  margin:0;
+  color:#374151;
+}
 
-/* Experience / Education */
-.job, .edu{
+/* ============================================================
+   15) EXPERIÊNCIA E FORMAÇÃO
+   ============================================================ */
+
+.job,
+.edu{
   display:grid;
-  grid-template-columns: 32% 68%;
+  grid-template-columns:32% 68%;
   gap:14px;
+
   padding:10px 0;
+
   border-top:1px solid var(--line);
 }
 
-.job:first-of-type, .edu:first-of-type{
-  border-top:none;
+.job:first-of-type,
+.edu:first-of-type{
   padding-top:0;
+  border-top:none;
 }
 
 .job--compact{
-  border-top:1px solid var(--line);
   padding-top:10px;
+  border-top:1px solid var(--line);
 }
 
-.job-meta, .edu-meta{
+.job-meta,
+.edu-meta{
   color:var(--muted);
+
   font-size:12.5px;
   line-height:1.35;
   text-align:left;
 }
 
-.job-meta__title, .edu-meta__title{
+.job-meta__title,
+.edu-meta__title{
   margin:0 0 4px 0;
-  font-size:13.5px;
+
   color:var(--ink);
+
+  font-size:13.5px;
   font-weight:700;
   text-align:left;
 }
 
-.job-meta__info, .edu-meta__info{ margin:0; }
+.job-meta__info,
+.edu-meta__info{
+  margin:0;
+}
 
-.bullets{ margin:0; padding-left:18px; }
-.bullets li{ margin:6px 0; text-align: justify; }
+.bullets{
+  margin:0;
+  padding-left:18px;
+}
 
-.edu-desc__line{ margin:0; }
-.small{ font-size:12.5px; color:var(--muted); }
+.bullets li{
+  margin:6px 0;
+  text-align:justify;
+}
 
-/* Print: esconde botão */
+.edu-desc__line{
+  margin:0;
+}
+
+.small{
+  color:var(--muted);
+  font-size:12.5px;
+}
+
+/* ============================================================
+   16) RESPONSIVIDADE DA VISUALIZAÇÃO
+
+   O currículo continua com largura A4.
+   Em telas menores, o usuário pode rolar horizontalmente.
+   ============================================================ */
+
+@media screen and (max-width:1100px){
+  .viewport{
+    padding-top:92px;
+  }
+
+  .page-actions{
+    top:12px;
+    right:12px;
+  }
+}
+
+@media screen and (max-width:820px){
+  body{
+    min-width:calc(var(--page-w) + 24px);
+  }
+
+  .page-actions{
+    position:absolute;
+  }
+}
+
+/* ============================================================
+   17) IMPRESSÃO / EXPORTAÇÃO PARA PDF
+   ============================================================ */
+
 @media print{
-  #btnExportPdf, .export-btn { display:none !important; }
-}
+  html,
+  body{
+    margin:0 !important;
+    padding:0 !important;
+    background:#ffffff !important;
+  }
 
-/* Botão flutuante */
-.export-btn{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 9999;
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(var(--accent-rgb), .25);
-  background: var(--paper);
-  color: var(--ink);
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,.12);
-}
+  .page-actions,
+  .action-btn,
+  #btnExportPdf,
+  #btnToggleLanguage,
+  .export-btn,
+  .language-btn{
+    display:none !important;
+  }
 
-.export-btn:hover{ border-color: rgba(var(--accent-rgb), .45); }
-.export-btn:disabled{ opacity: .6; cursor: not-allowed; }
+  .viewport{
+    padding:0 !important;
+  }
+
+  .page{
+    margin:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+  }
+}

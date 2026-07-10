@@ -1,416 +1,702 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Currículo — Gabriel Felipe Souza Santos</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Currículo — Gabriel Felipe Souza Santos</title>
+<!-- Estilos gerais do currículo -->
+<link href="styles.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <!-- Botão de exportação (não entra no PDF) -->
-  <button id="btnExportPdf" class="export-btn" type="button">
-    Exportar PDF
-  </button>
-  <!-- Centraliza visualmente na tela, mas mantém scroll do documento -->
-  <div class="viewport">
-    <!-- "Folha" A4 com altura ilimitada -->
-    <main id="cv" class="page" role="document" aria-label="Currículo de Gabriel Felipe Souza Santos">
-      <div class="columns">
+  <!-- ==========================================================
+    CONTROLES DA PÁGINA
 
-        <!-- ==========================================================
-          COLUNA ESQUERDA (FIXA EM LARGURA, ALTURA LIVRE)
-          Para adicionar itens: basta editar/duplicar os blocos aqui.
-        =========================================================== -->
-        <aside class="sidebar" aria-label="Informações laterais do currículo">
+    Os dois botões usam a mesma classe base (.action-btn).
+    A classe .page-actions organiza os botões verticalmente,
+    deixando o seletor de idioma abaixo do botão de exportação.
 
-          <!-- FOTO -->
-          <figure class="photo" aria-label="Foto">
-            <img class="photo__img" src="assets/foto.png" alt="Foto de Gabriel" />
-          </figure>
+    Estes controles aparecem somente no navegador e são
+    ocultados durante a geração do PDF.
+  =========================================================== -->
+  <div class="page-actions" aria-label="Ações do currículo">
+    <button
+      id="btnExportPdf"
+      class="action-btn export-btn"
+      type="button"
+      data-i18n="page.exportButton"
+      aria-label="Exportar currículo em PDF"
+    >
+      Exportar PDF
+    </button>
 
-          <!-- NOME + TÍTULO -->
-          <header class="sidebar-header">
-            <h1 class="name">Gabriel Felipe Souza Santos</h1>
-            <p class="title">Backend (TypeScript/Node.js) • Dados / Analytics</p>
-          </header>
-
-          <!-- CONTATO -->
-          <section class="sidebar-section" aria-label="Contato">
-            <h2 class="sidebar-section__title">Contato</h2>
-
-            <ul class="contact" role="list">
-              <li class="contact__item">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 10.8 19.86 19.86 0 0 1 .08 2.18 2 2 0 0 1 2.06 0h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.6a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.48-1.14a2 2 0 0 1 2.11-.45c.83.29 1.7.5 2.6.62A2 2 0 0 1 22 16.92Z" fill="currentColor"/>
-                </svg>
-                <div class="contact__value">(31) 98681-5601</div>
-              </li>
-
-              <li class="contact__item">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 4 8 5 8-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div class="contact__value">
-                  <a class="contact__link" href="mailto:gabrielfelipesouzasantos@gmail.com">
-                    gabrielfelipesouzasantos@gmail.com
-                  </a>
-                </div>
-              </li>
-
-              <li class="contact__item">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <div class="contact__value inline-links">
-                  <div><a class="contact__link" href="https://www.linkedin.com/in/gabrielfssantos/" target="_blank" rel="noopener">LinkedIn</a></div>
-                  <div><a class="contact__link" href="https://lattes.cnpq.br/3658628722776496" target="_blank" rel="noopener">Lattes</a></div>
-                  <div><a class="contact__link" href="https://github.com/GabrielFSSantos" target="_blank" rel="noopener">GitHub</a></div>
-                </div>
-              </li>
-            </ul>
-          </section>
-
-          <!-- COMPETÊNCIAS -->
-          <section class="sidebar-section" aria-label="Competências">
-            <h2 class="sidebar-section__title">Competências</h2>
-            <div class="chips" aria-label="Competências técnicas em destaque">
-              <span class="chip">TypeScript</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">Node.js</span>
-              <span class="chip">APIs REST</span>
-              <span class="chip">Arquitetura de serviços</span>
-              <span class="chip">SOLID • DDD</span>
-              <span class="chip">Design Patterns</span>
-              <span class="chip">MySQL</span>
-              <span class="chip">PostgreSQL</span>
-              <span class="chip">MongoDB</span>
-              <span class="chip">SQLite</span>
-              <span class="chip">NestJS (em aprofundamento)</span>
-              <span class="chip">React</span>
-              <span class="chip">Vue.js</span>
-              <span class="chip">React Native</span>
-              <span class="chip">Git</span>
-              <span class="chip">CI/CD</span>
-              <span class="chip">Scrum • Kanban</span>
-              <span class="chip">Power BI</span>
-              <span class="chip">Grafana</span>
-              <span class="chip">Node-RED</span>
-              <span class="chip">InfluxDB</span>
-              <span class="chip">OPC • PLC</span>
-            </div>
-          </section>
-
-          <!-- FERRAMENTAS -->
-          <section class="sidebar-section" aria-label="Ferramentas">
-            <h2 class="sidebar-section__title">Ferramentas</h2>
-            <ul class="list" role="list">
-              <li>Git / GitHub</li>
-              <li>Power BI</li>
-              <li>Grafana</li>
-              <li>Node-RED</li>
-              <li>Figma (apoio / prototipação)</li>
-              <li>CorelDRAW • Photoshop • Illustrator</li>
-              <li>WordPress</li>
-            </ul>
-          </section>
-
-          <!-- HABILIDADES -->
-          <section class="sidebar-section" aria-label="Habilidades">
-            <h2 class="sidebar-section__title">Habilidades</h2>
-            <ul class="list" role="list">
-              <li>Trabalho em equipe e colaboração com stakeholders</li>
-              <li>Comunicação clara e organização (entrega e qualidade)</li>
-              <li>Liderança por iniciativa (apoio e responsabilidade)</li>
-              <li>Agilidade e adaptabilidade</li>
-              <li>Priorização (essencialismo)</li>
-            </ul>
-          </section>
-        </aside>
-
-        <!-- ==========================================================
-          COLUNA DIREITA (FIXA EM LARGURA, ALTURA LIVRE)
-          Aqui vai o conteúdo "market-driven".
-        =========================================================== -->
-        <section class="main" aria-label="Conteúdo principal do currículo">
-
-          <!-- Cabeçalho principal -->
-          <header class="main-header">
-            <p class="role">Desenvolvedor Backend • Analista de Dados</p>
-            <p class="objective">
-              Objetivo: atuar em tecnologia, com foco em desenvolvimento backend e interesse em soluções orientadas a dados, contribuindo para criar sistemas escaláveis e bem estruturados, aplicando boas práticas de engenharia e evoluindo continuamente para gerar impacto real no produto e no negócio.
-            </p>
-          </header>
-
-          <!-- Resumo -->
-          <section class="block" aria-label="Resumo Profissional">
-            <div class="block-title">
-              <h2>Resumo Profissional</h2>
-              <span class="rule" aria-hidden="true"></span>
-            </div>
-
-            <p class="summary">
-              Desenvolvedor de sistemas com foco em <strong>backend (TypeScript/Node.js)</strong>, criação de <strong>APIs e serviços escaláveis</strong>, e experiência com bancos relacionais e não relacionais
-              (<strong>MySQL, PostgreSQL, MongoDB e SQLite</strong>). Aplico boas práticas e princípios como <strong>SOLID, DDD</strong> e <strong>design patterns</strong>, além de rotinas de entrega com <strong>Git</strong> e <strong>CI/CD</strong> e vivência com <strong>Scrum/Kanban</strong>.
-              No contexto industrial e dados, atuo com <strong>governança</strong>, <strong>monitoramento</strong> e ferramentas como <strong>InfluxDB, Node-RED, Grafana</strong> e <strong>Power BI</strong>.
-            </p>
-          </section>
-
-          <!-- Experiência Profissional -->
-          <section class="block" aria-label="Experiência Profissional">
-            <div class="block-title">
-              <h2>Experiência Profissional</h2>
-              <span class="rule" aria-hidden="true"></span>
-            </div>
-
-            <!-- AMBEV - São Luís -->
-            <article class="job">
-              <header class="job-meta">
-                <h3 class="job-meta__title">AMBEV — Cervejaria de São Luís</h3>
-                <p class="job-meta__info">
-                  Analista de Dados I<br />
-                  Abr/2024 – Atual<br />
-                  Remoto
-                </p>
-              </header>
-              <div class="job-desc">
-                <ul class="bullets" role="list">
-                  <li>Atuação na <strong>otimização e padronização</strong> de rotinas e no <strong>monitoramento de processos</strong>, apoiando tomada de decisão e alinhamento com metas da operação.</li>
-                  <li>Responsável por iniciativas de <strong>governança de dados</strong>, apoiando a disseminação de boas práticas e processos junto às áreas envolvidas.</li>
-                  <li>Condução de <strong>treinamentos</strong> sobre ferramentas e rotinas implementadas.</li>
-                  <li class="small"><strong>Tecnologias:</strong> InfluxDB, Node-RED, Grafana, Power BI, OPC, PLC.</li>
-                </ul>
-              </div>
-            </article>
-
-            <!-- AMBEV - Sete Lagoas -->
-            <article class="job">
-              <header class="job-meta">
-                <h3 class="job-meta__title">AMBEV — Cervejaria Nova Minas (Sete Lagoas)</h3>
-                <p class="job-meta__info">
-                  Estagiário de Análise e Desenvolvimento<br />
-                  Nov/2021 – Jul/2023<br />
-                  Sete Lagoas–MG
-                </p>
-              </header>
-              <div class="job-desc">
-                <ul class="bullets" role="list">
-                  <li>Atuação em <strong>Análise e Desenvolvimento</strong> com foco em <strong>Engenharia de Dados e Confiabilidade</strong>, contribuindo para otimização de rotinas e controle de processos.</li>
-                  <li>Condução/apoio a iniciativas de <strong>governança</strong> e padronização de procedimentos em fluxos operacionais.</li>
-                  <li>Realização de <strong>treinamentos</strong> e suporte técnico a diferentes áreas da fábrica.</li>
-                  <li class="small"><strong>Tecnologias:</strong> MySQL, Node-RED, Grafana, Power BI, OPC, PLC.</li>
-                </ul>
-              </div>
-            </article>
-
-            <!-- Precato -->
-            <article class="job">
-              <header class="job-meta">
-                <h3 class="job-meta__title">Precato</h3>
-                <p class="job-meta__info">
-                  Desenvolvedor Back-end<br />
-                  Set/2021 – Out/2021<br />
-                  Remoto
-                </p>
-              </header>
-              <div class="job-desc">
-                <ul class="bullets" role="list">
-                  <li>Desenvolvimento e evolução de soluções voltadas à <strong>captação e tratamento de dados</strong>, com foco em confiabilidade.</li>
-                  <li>Automatização de processos manuais e manutenção de sistemas internos utilizados por colaboradores da empresa.</li>
-                  <li class="small"><strong>Tecnologias:</strong> Node.js, TypeScript.</li>
-                </ul>
-              </div>
-            </article>
-
-            <!-- Goclin (Back-end + apoio pontual em Front-end) -->
-            <article class="job">
-              <header class="job-meta">
-                <h3 class="job-meta__title">Goclin</h3>
-                <p class="job-meta__info">
-                  Desenvolvedor Back-end (com apoio pontual em Front-end)<br />
-                  Dez/2020 – Abr/2021<br />
-                  Remoto
-                </p>
-              </header>
-
-              <div class="job-desc">
-                <ul class="bullets" role="list">
-                  <li>Desenvolvimento e manutenção do backend, evoluindo funcionalidades e contribuindo para a <strong>estabilidade</strong> e <strong>performance</strong> do produto.</li>
-                  <li>Apoio pontual (1 mês) no front-end com <strong>Vue.js</strong>, ajustando fluxos de navegação e integrações com os serviços.</li>
-                  <li class="small"><strong>Tecnologias:</strong> Node.js, GraphQL, MongoDB, Amazon Elasticsearch Service; Vue.js, Vuex, Vue Router.</li>
-                </ul>
-              </div>
-            </article>
-
-            <!-- Inova Solar -->
-            <article class="job">
-              <header class="job-meta">
-                <h3 class="job-meta__title">Inova Solar</h3>
-                <p class="job-meta__info">
-                  Desenvolvedor Back-end (Freelancer)<br />
-                  Fev/2020 – Nov/2020<br />
-                  Remoto
-                </p>
-              </header>
-              <div class="job-desc">
-                <ul class="bullets" role="list">
-                  <li>Atuação em plataforma web de energia solar (site institucional, sistema interno para cálculos/dimensionamento, loja e blog).</li>
-                  <li>Desenvolvimento de <strong>API REST</strong> para o portal, apoiando integração entre módulos e funcionalidades.</li>
-                  <li class="small"><strong>Tecnologias:</strong> Node.js, MySQL, Sequelize.</li>
-                </ul>
-              </div>
-            </article>
-
-            <!-- Visão Tecnologia e Sistemas — Diretor de Projetos -->
-            <article class="job">
-              <header class="job-meta">
-                <h3 class="job-meta__title">Visão Tecnologia e Sistemas</h3>
-                <p class="job-meta__info">
-                  Diretor de Projetos (Web)<br />
-                  Fev/2020 – Jul/2020<br />
-                  João Monlevade–MG
-                </p>
-              </header>
-              <div class="job-desc">
-                <ul class="bullets" role="list">
-                  <li>Desenvolvimento e gerenciamento de websites e sistemas web, com foco em organização de entregas e <strong>controle de qualidade</strong>.</li>
-                  <li>Liderança de equipe, planejamento/distribuição de demandas, validações e mediação do relacionamento com clientes.</li>
-                  <li>Realização de pré-diagnósticos para levantamento de necessidades e direcionamento das soluções.</li>
-                </ul>
-              </div>
-            </article>
-
-            <!-- Experiências complementares (relevantes para mercado)
-            <div class="subblock" aria-label="Experiências Complementares">
-              <h3 class="subblock-title">Experiências Complementares</h3>
-
-              <article class="job job--compact">
-                <header class="job-meta">
-                  <h3 class="job-meta__title">Instituto Solar</h3>
-                  <p class="job-meta__info">
-                    Designer Gráfico<br />
-                    Jun/2019 – Out/2019<br />
-                    João Monlevade–MG
-                  </p>
-                </header>
-                <div class="job-desc">
-                  <ul class="bullets" role="list">
-                    <li>Criação de artes/cartilhas, peças publicitárias e edição de vídeos institucionais; apoio administrativo (Excel) e atendimento ao cliente.</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="job job--compact">
-                <header class="job-meta">
-                  <h3 class="job-meta__title">Visão Tecnologia e Sistemas</h3>
-                  <p class="job-meta__info">
-                    Assessor de Marketing<br />
-                    Ago/2019 – Dez/2019<br />
-                    João Monlevade–MG
-                  </p>
-                </header>
-                <div class="job-desc">
-                  <ul class="bullets" role="list">
-                    <li>Criação de conteúdo (artes e vídeos) para divulgação e prospecção de clientes por e-mail/telefone/mídias sociais.</li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-            -->
-
-          </section>
-
-          <!-- Formação -->
-          <section class="block" aria-label="Formação">
-            <div class="block-title">
-              <h2>Formação</h2>
-              <span class="rule" aria-hidden="true"></span>
-            </div>
-
-            <article class="edu">
-              <header class="edu-meta">
-                <h3 class="edu-meta__title">Mestrado em Ciência da Computação</h3>
-                <p class="edu-meta__info">
-                  UFSJ — Campus Tancredo Neves<br />
-                  Ago/2025 – Atual<br />
-                  <span class="small">São João del-Rei–MG</span>
-                </p>
-              </header>
-              <div class="edu-desc">
-                <p class="edu-desc__line"><strong>Linha de pesquisa:</strong> Otimização e Inteligência Computacional</p>
-                <p class="small">
-                  Tema/Projeto: pipeline de <strong>Causal Machine Learning</strong> para estimar efeitos causais (ATE/ATT) e heterogêneos (HTE) de intervenções em políticas de saúde sobre o uso do SUS.
-                </p>
-              </div>
-            </article>
-
-            <article class="edu">
-              <header class="edu-meta">
-                <h3 class="edu-meta__title">Bacharelado em Sistemas de Informação</h3>
-                <p class="edu-meta__info">
-                  UFOP — João Monlevade<br />
-                  Mar/2018 – Abr/2025<br />
-                  <span class="small">Concluído</span>
-                </p>
-              </header>
-              <div class="edu-desc">
-                <p class="edu-desc__line">
-                  <strong>TCC:</strong> Desenvolvimento de um modelo preditivo para identificação de uso dos serviços de saúde com base nas características de brasileiros.
-                </p>
-                <p class="small">
-                  Resumo: desenvolveu e validou modelo com dados da PNS 2019 (IBGE) para antecipar padrões de uso de serviços do SUS, combinando segmentação de perfis e classificação supervisionada.
-                </p>
-              </div>
-            </article>
-
-            <article class="edu">
-              <header class="edu-meta">
-                <h3 class="edu-meta__title">Técnico em Metalurgia</h3>
-                <p class="edu-meta__info">
-                  IFMG — Ouro Branco<br />
-                  Fev/2015 – Dez/2017
-                </p>
-              </header>
-              <div class="edu-desc">
-                <p class="small">Aplicação de normas de segurança, saúde e controle de qualidade, garantindo que processos de fabricação, instalação e manutenção de máquinas sigam as especificações de catálogos e manuais técnicos. Projetar ferramentas e equipamentos mediante desenho técnico e fundamentos matemáticos, visão administrativa ao elaborar planilhas de custos e otimizar a logística de produção, com melhor equilíbrio entre investimento e benefício para a indústria.</p>
-              </div>
-            </article>
-          </section>
-
-          <!-- Cursos -->
-          <section class="block" aria-label="Cursos">
-            <div class="block-title">
-              <h2>Cursos</h2>
-              <span class="rule" aria-hidden="true"></span>
-            </div>
-
-            <ul class="list" role="list">
-              <li><strong>Excel Intermediário</strong> — UFOP (João Monlevade–MG) — Set/2018 a Dez/2018 — <span class="small">20h</span></li>
-              <li><strong>CorelDRAW Básico</strong> — UFOP (João Monlevade–MG) — Set/2018 a Dez/2018 — <span class="small">20h</span></li>
-              <li><strong>Proteus Intermediário</strong> — UFOP (João Monlevade–MG) — Jun/2018 a Fev/2019 — <span class="small">20h</span></li>
-            </ul>
-          </section>
-
-          <!-- Atividades Complementares (compacto e relevante) -->
-          <section class="block" aria-label="Atividades Complementares">
-            <div class="block-title">
-              <h2>Atividades Complementares</h2>
-              <span class="rule" aria-hidden="true"></span>
-            </div>
-
-            <ul class="list" role="list">
-              <li><strong>Projetos de extensão e pesquisa</strong>: EcoPilhas (PNRS), Reciclagem com Matemática, Inclusão Digital (Informática Básica/EJA), RECIMAT (pesquisa em atividades lúdicas e materiais recicláveis).</li>
-              <li><strong>Eventos e participação</strong>: Simulações de ONU (Delegado — SISA, CM Mundi, MiniONU), Comissão Organizadora da Semana Nacional de Ciência e Tecnologia (IFMG), Workshop Conexão Sicoob e Laboratório de Inovação do Conexão Sicoob.</li>
-            </ul>
-          </section>
-
-        </section>
-      </div>
-    </main>
+    <button
+      id="btnToggleLanguage"
+      class="action-btn language-btn"
+      type="button"
+      data-i18n="page.languageButton"
+      aria-label="Alternar idioma do currículo"
+    >
+      English
+    </button>
   </div>
 
-  <!-- seu script -->
-  <script src="scripts/export-client.js"></script>
-</body>
+<!-- ==========================================================
+    ÁREA DE VISUALIZAÇÃO
+
+    Centraliza o currículo na tela sem limitar sua altura.
+  =========================================================== -->
+<div class="viewport">
+<!-- ========================================================
+      CURRÍCULO
+
+      Possui largura fixa equivalente a uma folha A4,
+      mas cresce verticalmente conforme a quantidade de conteúdo.
+    ========================================================= -->
+<main aria-label="Currículo de Gabriel Felipe Souza Santos" class="page" id="cv" role="document">
+<div class="columns">
+<!-- ======================================================
+          COLUNA ESQUERDA
+
+          Contém:
+          - foto;
+          - nome e título profissional;
+          - contato;
+          - competências;
+          - ferramentas;
+          - habilidades comportamentais.
+        ======================================================= -->
+<aside aria-label="Informações laterais do currículo" class="sidebar">
+<!-- FOTO -->
+<figure aria-label="Foto de Gabriel" class="photo">
+<img alt="Foto de Gabriel Felipe Souza Santos" class="photo__img" src="assets/foto.png"/>
+</figure>
+<!-- NOME E TÍTULO PROFISSIONAL -->
+<header class="sidebar-header">
+<h1 class="name">
+              Gabriel Felipe Souza Santos
+            </h1>
+<p class="title" data-i18n="sidebar.professionalTitle">
+              Power Apps • Backend • Dados e Analytics
+            </p>
+</header>
+<!-- ====================================================
+            CONTATO
+          ===================================================== -->
+<section aria-labelledby="titulo-contato" class="sidebar-section">
+<h2 class="sidebar-section__title" data-i18n="sections.contact" id="titulo-contato">
+              Contato
+            </h2>
+<ul class="contact" role="list">
+<!-- TELEFONE -->
+<li class="contact__item">
+<svg aria-hidden="true" class="icon" fill="none" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 10.8 19.86 19.86 0 0 1 .08 2.18 2 2 0 0 1 2.06 0h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.6a2 2 0 0 1-.45 2.11L6.09 7.91a16 16 0 0 0 6 6l1.48-1.14a2 2 0 0 1 2.11-.45c.83.29 1.7.5 2.6.62A2 2 0 0 1 22 16.92Z" fill="currentColor"></path>
+</svg>
+<div class="contact__value">
+<a class="contact__link" href="tel:+5531986815601">
+                    (31) 98681-5601
+                  </a>
+</div>
+</li>
+<!-- E-MAIL -->
+<li class="contact__item">
+<svg aria-hidden="true" class="icon" fill="none" viewbox="0 0 24 24">
+<path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 4 8 5 8-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="contact__value">
+<a class="contact__link" href="mailto:gabrielfelipesouzasantos@gmail.com">
+                    gabrielfelipesouzasantos@gmail.com
+                  </a>
+</div>
+</li>
+<!-- PERFIS PROFISSIONAIS -->
+<li class="contact__item">
+<svg aria-hidden="true" class="icon" fill="none" viewbox="0 0 24 24">
+<path d="M10 13a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M14 11a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<div class="contact__value inline-links">
+<div>
+<a class="contact__link" href="https://www.linkedin.com/in/gabrielfssantos/" rel="noopener noreferrer" target="_blank">
+                      LinkedIn
+                    </a>
+</div>
+<div>
+<a class="contact__link" data-i18n="sidebar.lattes" href="https://lattes.cnpq.br/3658628722776496" rel="noopener noreferrer" target="_blank">
+                      Currículo Lattes
+                    </a>
+</div>
+<div>
+<a class="contact__link" href="https://github.com/GabrielFSSantos" rel="noopener noreferrer" target="_blank">
+                      GitHub
+                    </a>
+</div>
+</div>
+</li>
+</ul>
+</section>
+<!-- ====================================================
+            COMPETÊNCIAS TÉCNICAS
+
+            Para adicionar uma nova competência:
+            <span class="chip">Nova competência</span>
+          ===================================================== -->
+<section aria-labelledby="titulo-competencias" class="sidebar-section">
+<h2 class="sidebar-section__title" data-i18n="sections.skills" id="titulo-competencias">
+              Competências
+            </h2>
+<div aria-label="Competências técnicas" class="chips">
+<!-- POWER PLATFORM -->
+<span class="chip">Power Apps</span>
+<span class="chip">Power Fx</span>
+<span class="chip">Dataverse</span>
+<span class="chip">Power BI</span>
+<span class="chip">Microsoft Teams</span>
+<span class="chip" data-i18n="skills.automation">Automações</span>
+<span class="chip" data-i18n="skills.lowCode">Soluções Low-Code</span>
+<!-- BACKEND E DESENVOLVIMENTO -->
+<span class="chip">TypeScript</span>
+<span class="chip">JavaScript</span>
+<span class="chip">Node.js</span>
+<span class="chip">APIs REST</span>
+<span class="chip">GraphQL</span>
+<span class="chip" data-i18n="skills.serviceArchitecture">Arquitetura de Serviços</span>
+<span class="chip">SOLID • DDD</span>
+<span class="chip">Design Patterns</span>
+<span class="chip">NestJS</span>
+<!-- BANCOS DE DADOS -->
+<span class="chip">MySQL</span>
+<span class="chip">PostgreSQL</span>
+<span class="chip">MongoDB</span>
+<span class="chip">SQLite</span>
+<span class="chip">InfluxDB</span>
+<!-- FRONTEND -->
+<span class="chip">Vue.js</span>
+<span class="chip">React</span>
+<span class="chip">React Native</span>
+<!-- DADOS E INDÚSTRIA -->
+<span class="chip">Grafana</span>
+<span class="chip">Node-RED</span>
+<span class="chip">OPC • PLC</span>
+<span class="chip" data-i18n="skills.dataGovernance">Governança de Dados</span>
+<!-- PROCESSOS DE DESENVOLVIMENTO -->
+<span class="chip">Git</span>
+<span class="chip">CI/CD</span>
+<span class="chip">Scrum • Kanban</span>
+</div>
+</section>
+<!-- ====================================================
+            FERRAMENTAS
+          ===================================================== -->
+<section aria-labelledby="titulo-ferramentas" class="sidebar-section">
+<h2 class="sidebar-section__title" data-i18n="sections.tools" id="titulo-ferramentas">
+              Ferramentas
+            </h2>
+<ul class="list" role="list">
+<li>Power Apps</li>
+<li>Dataverse</li>
+<li>Power BI</li>
+<li>Microsoft Teams</li>
+<li>Git / GitHub</li>
+<li>Grafana</li>
+<li>Node-RED</li>
+<li>Figma</li>
+<li>WordPress</li>
+<li>CorelDRAW • Photoshop • Illustrator</li>
+</ul>
+</section>
+<!-- ====================================================
+            HABILIDADES COMPORTAMENTAIS
+          ===================================================== -->
+<section aria-labelledby="titulo-habilidades" class="sidebar-section">
+<h2 class="sidebar-section__title" data-i18n="sections.softSkills" id="titulo-habilidades">
+              Habilidades
+            </h2>
+<ul class="list" role="list">
+<li data-i18n="softSkills.teamwork">Trabalho em equipe e colaboração com stakeholders</li>
+<li data-i18n="softSkills.communication">Comunicação clara e organização</li>
+<li data-i18n="softSkills.requirements">Levantamento e compreensão de requisitos</li>
+<li data-i18n="softSkills.leadership">Liderança, iniciativa e responsabilidade</li>
+<li data-i18n="softSkills.problemSolving">Resolução de problemas</li>
+<li data-i18n="softSkills.adaptability">Agilidade e adaptabilidade</li>
+<li data-i18n="softSkills.prioritization">Priorização e foco em resultados</li>
+</ul>
+</section>
+</aside>
+<!-- ======================================================
+          COLUNA DIREITA
+
+          Contém:
+          - cargo e objetivo;
+          - resumo profissional;
+          - experiências;
+          - formação;
+          - cursos;
+          - atividades complementares.
+        ======================================================= -->
+<section aria-label="Conteúdo principal do currículo" class="main">
+<!-- ====================================================
+            APRESENTAÇÃO E OBJETIVO
+          ===================================================== -->
+<header class="main-header">
+<p class="role" data-i18n="header.role">
+              Desenvolvedor Power Apps • Backend • Analista de Dados
+            </p>
+<p class="objective" data-i18n="header.objective">
+              Objetivo: atuar em tecnologia, com foco em desenvolvimento 
+              backend e interesse em soluções orientadas a dados, contribuindo 
+              para criar sistemas escaláveis e bem estruturados, aplicando boas 
+              práticas de engenharia e evoluindo continuamente para gerar 
+              impacto real no produto e no negócio.
+            </p>
+</header>
+<!-- ====================================================
+            RESUMO PROFISSIONAL
+          ===================================================== -->
+<section aria-labelledby="titulo-resumo" class="block">
+<div class="block-title">
+<h2 data-i18n="sections.summary" id="titulo-resumo">
+                Resumo Profissional
+              </h2>
+<span aria-hidden="true" class="rule"></span>
+</div>
+<p class="summary" data-i18n-html="summary.text">
+              Desenvolvedor com experiência em
+              <strong>Power Apps, Power Fx, Dataverse e Power BI</strong>,
+              atuando na criação de aplicações internas, regras de negócio,
+              controles de acesso, cadastros, filtros, coleções, integrações
+              e fluxos de gestão. Possuo também experiência em
+              <strong>desenvolvimento backend com TypeScript e Node.js</strong>,
+              construção de APIs e integração com bancos de dados relacionais
+              e não relacionais. Minha trajetória inclui projetos de
+              <strong>dados e automação industrial</strong>, com atuação em
+              governança, monitoramento de processos, estruturação de
+              informações e apoio à tomada de decisão utilizando ferramentas
+              como InfluxDB, Node-RED, Grafana e Power BI.
+            </p>
+</section>
+<!-- ====================================================
+            EXPERIÊNCIA PROFISSIONAL
+
+            Para adicionar uma nova experiência, duplique um bloco:
+            <article class="job">...</article>
+          ===================================================== -->
+<section aria-labelledby="titulo-experiencia" class="block">
+<div class="block-title">
+<h2 data-i18n="sections.experience" id="titulo-experiencia">
+                Experiência Profissional
+              </h2>
+<span aria-hidden="true" class="rule"></span>
+</div>
+<!-- ==================================================
+              NEUROSIA
+            =================================================== -->
+<article class="job">
+<header class="job-meta">
+<h3 class="job-meta__title">
+                  Neurosia
+                </h3>
+<p class="job-meta__info" data-i18n-html="experience.neurosia.meta">
+                  Desenvolvedor Power Apps<br/>
+                  Contrato temporário<br/>
+                  Abr/2026 – Atual<br/>
+                  Remoto
+                </p>
+</header>
+<div class="job-desc">
+<ul class="bullets" role="list">
+<li data-i18n-html="experience.neurosia.item1">
+                    Desenvolvimento e evolução de
+                    <strong>soluções internas com Power Apps</strong>,
+                    Dataverse e ferramentas do ecossistema Microsoft,
+                    incluindo aplicações integradas ao Microsoft Teams.
+                  </li>
+<li data-i18n="experience.neurosia.item2">
+                    Criação de telas, regras de negócio, controles de acesso,
+                    cadastros, filtros, coleções, integrações e fluxos de
+                    gestão para cerimônias, grupos, usuários, indicadores e
+                    processos operacionais.
+                  </li>
+<li data-i18n="experience.neurosia.item3">
+                    Otimização da experiência do usuário, correção de
+                    inconsistências, melhoria de performance, governança das
+                    informações e estruturação de dados para apoiar a tomada
+                    de decisão.
+                  </li>
+<li class="small" data-i18n-html="experience.neurosia.technologies">
+<strong>Tecnologias:</strong>
+                    Power Apps, Power Fx, Dataverse, Microsoft Teams,
+                    Power BI, automações e soluções low-code.
+                  </li>
+</ul>
+</div>
+</article>
+<!-- ==================================================
+              AMBEV — SÃO LUÍS
+            =================================================== -->
+<article class="job">
+<header class="job-meta">
+<h3 class="job-meta__title" data-i18n="experience.ambevSaoLuis.company">
+                  AMBEV — Cervejaria de São Luís
+                </h3>
+<p class="job-meta__info" data-i18n-html="experience.ambevSaoLuis.meta">
+                  Analista de Dados I<br/>
+                  Abr/2024 – Jun/2026<br/>
+                  Remoto
+                </p>
+</header>
+<div class="job-desc">
+<ul class="bullets" role="list">
+<li data-i18n-html="experience.ambevSaoLuis.item1">
+                    Atuação na
+                    <strong>otimização e padronização de rotinas</strong>
+                    e no monitoramento de processos, apoiando a tomada de
+                    decisão e o alinhamento com metas operacionais.
+                  </li>
+<li data-i18n-html="experience.ambevSaoLuis.item2">
+                    Responsável por iniciativas de
+                    <strong>governança de dados</strong>, estruturação de
+                    informações e disseminação de boas práticas junto às
+                    áreas envolvidas.
+                  </li>
+<li data-i18n="experience.ambevSaoLuis.item3">
+                    Condução de treinamentos sobre ferramentas, rotinas e
+                    processos implementados.
+                  </li>
+<li class="small" data-i18n-html="experience.ambevSaoLuis.technologies">
+<strong>Tecnologias:</strong>
+                    InfluxDB, Node-RED, Grafana, Power BI, OPC e PLC.
+                  </li>
+</ul>
+</div>
+</article>
+<!-- ==================================================
+              AMBEV — SETE LAGOAS
+            =================================================== -->
+<article class="job">
+<header class="job-meta">
+<h3 class="job-meta__title" data-i18n="experience.ambevNovaMinas.company">
+                  AMBEV — Cervejaria Nova Minas
+                </h3>
+<p class="job-meta__info" data-i18n-html="experience.ambevNovaMinas.meta">
+                  Estagiário de Análise e Desenvolvimento<br/>
+                  Nov/2021 – Jul/2023<br/>
+                  Sete Lagoas–MG
+                </p>
+</header>
+<div class="job-desc">
+<ul class="bullets" role="list">
+<li data-i18n-html="experience.ambevNovaMinas.item1">
+                    Atuação em análise e desenvolvimento com foco em
+                    <strong>Engenharia de Dados e Confiabilidade</strong>,
+                    contribuindo para a otimização de rotinas e o controle
+                    de processos industriais.
+                  </li>
+<li data-i18n="experience.ambevNovaMinas.item2">
+                    Apoio a iniciativas de governança de dados, padronização
+                    de procedimentos e melhoria de fluxos operacionais.
+                  </li>
+<li data-i18n="experience.ambevNovaMinas.item3">
+                    Realização de treinamentos e suporte técnico a diferentes
+                    áreas da fábrica.
+                  </li>
+<li class="small" data-i18n-html="experience.ambevNovaMinas.technologies">
+<strong>Tecnologias:</strong>
+                    MySQL, Node-RED, Grafana, Power BI, OPC e PLC.
+                  </li>
+</ul>
+</div>
+</article>
+<!-- ==================================================
+              PRECATO
+            =================================================== -->
+<article class="job">
+<header class="job-meta">
+<h3 class="job-meta__title">
+                  Precato
+                </h3>
+<p class="job-meta__info" data-i18n-html="experience.precato.meta">
+                  Desenvolvedor Back-end<br/>
+                  Set/2021 – Out/2021<br/>
+                  Remoto
+                </p>
+</header>
+<div class="job-desc">
+<ul class="bullets" role="list">
+<li data-i18n-html="experience.precato.item1">
+                    Desenvolvimento e evolução de soluções voltadas à
+                    <strong>captação e ao tratamento de dados</strong>,
+                    com foco em confiabilidade e organização das informações.
+                  </li>
+<li data-i18n="experience.precato.item2">
+                    Automatização de processos manuais e manutenção de
+                    sistemas internos utilizados pelos colaboradores da
+                    empresa.
+                  </li>
+<li class="small" data-i18n-html="experience.precato.technologies">
+<strong>Tecnologias:</strong>
+                    Node.js e TypeScript.
+                  </li>
+</ul>
+</div>
+</article>
+<!-- ==================================================
+              GOCLIN
+            =================================================== -->
+<article class="job">
+<header class="job-meta">
+<h3 class="job-meta__title">
+                  Goclin
+                </h3>
+<p class="job-meta__info" data-i18n-html="experience.goclin.meta">
+                  Desenvolvedor Back-end<br/>
+                  Dez/2020 – Abr/2021<br/>
+                  Remoto
+                </p>
+</header>
+<div class="job-desc">
+<ul class="bullets" role="list">
+<li data-i18n="experience.goclin.item1">
+                    Desenvolvimento e manutenção do backend, evolução de
+                    funcionalidades e suporte à estabilidade e à performance
+                    do produto.
+                  </li>
+<li data-i18n-html="experience.goclin.item2">
+                    Atuação temporária no frontend com
+                    <strong>Vue.js</strong>, realizando ajustes em fluxos
+                    de navegação e integração com os serviços da aplicação.
+                  </li>
+<li class="small" data-i18n-html="experience.goclin.technologies">
+<strong>Tecnologias:</strong>
+                    Node.js, GraphQL, MongoDB, Amazon Elasticsearch Service,
+                    Vue.js, Vuex e Vue Router.
+                  </li>
+</ul>
+</div>
+</article>
+<!-- ==================================================
+              INOVA SOLAR
+            =================================================== -->
+<article class="job">
+<header class="job-meta">
+<h3 class="job-meta__title">
+                  Inova Solar
+                </h3>
+<p class="job-meta__info" data-i18n-html="experience.inovaSolar.meta">
+                  Desenvolvedor Back-end — Freelancer<br/>
+                  Fev/2020 – Nov/2020<br/>
+                  Remoto
+                </p>
+</header>
+<div class="job-desc">
+<ul class="bullets" role="list">
+<li data-i18n="experience.inovaSolar.item1">
+                    Desenvolvimento de uma plataforma web para o setor de
+                    energia solar, composta por site institucional, sistema
+                    interno de cálculos, loja virtual e blog.
+                  </li>
+<li data-i18n-html="experience.inovaSolar.item2">
+                    Construção de <strong>API REST</strong>, modelagem de
+                    dados e integração entre os diferentes módulos da
+                    plataforma.
+                  </li>
+<li class="small" data-i18n-html="experience.inovaSolar.technologies">
+<strong>Tecnologias:</strong>
+                    Node.js, MySQL e Sequelize.
+                  </li>
+</ul>
+</div>
+</article>
+<!-- ==================================================
+              VISÃO TECNOLOGIA E SISTEMAS
+            =================================================== -->
+<article class="job">
+<header class="job-meta">
+<h3 class="job-meta__title">
+                  Visão Tecnologia e Sistemas
+                </h3>
+<p class="job-meta__info" data-i18n-html="experience.visao.meta">
+                  Diretor de Projetos — Web<br/>
+                  Fev/2020 – Jul/2020<br/>
+                  João Monlevade–MG
+                </p>
+</header>
+<div class="job-desc">
+<ul class="bullets" role="list">
+<li data-i18n="experience.visao.item1">
+                    Desenvolvimento e gerenciamento de websites e sistemas
+                    web, com organização de entregas, acompanhamento de
+                    projetos e controle de qualidade.
+                  </li>
+<li data-i18n="experience.visao.item2">
+                    Liderança de equipe, planejamento e distribuição de
+                    demandas, validação de entregas e mediação do
+                    relacionamento com clientes.
+                  </li>
+<li data-i18n="experience.visao.item3">
+                    Realização de pré-diagnósticos para levantamento de
+                    necessidades e direcionamento das soluções.
+                  </li>
+</ul>
+</div>
+</article>
+</section>
+<!-- ====================================================
+            FORMAÇÃO ACADÊMICA
+          ===================================================== -->
+<section aria-labelledby="titulo-formacao" class="block">
+<div class="block-title">
+<h2 data-i18n="sections.education" id="titulo-formacao">
+                Formação
+              </h2>
+<span aria-hidden="true" class="rule"></span>
+</div>
+<!-- MESTRADO -->
+<article class="edu">
+<header class="edu-meta">
+<h3 class="edu-meta__title" data-i18n="education.master.title">
+                  Mestrado em Ciência da Computação
+                </h3>
+<p class="edu-meta__info" data-i18n-html="education.master.meta">
+                  UFSJ — Campus Tancredo Neves<br/>
+                  Ago/2025 – Atual<br/>
+<span class="small">
+                    São João del-Rei–MG
+                  </span>
+</p>
+</header>
+<div class="edu-desc">
+<p class="edu-desc__line" data-i18n-html="education.master.researchLine">
+<strong>Linha de pesquisa:</strong>
+                  Otimização e Inteligência Computacional
+                </p>
+<p class="small" data-i18n-html="education.master.topic">
+<strong>Tema:</strong>
+                  análise de sentimentos em notícias e documentos do mercado
+                  financeiro brasileiro utilizando NLP, FinBERT e modelos de
+                  linguagem, com o objetivo de construir indicadores contínuos
+                  de sentimento para empresas e setores da B3 e investigar
+                  sua relação com variáveis do mercado.
+                </p>
+</div>
+</article>
+<!-- BACHARELADO -->
+<article class="edu">
+<header class="edu-meta">
+<h3 class="edu-meta__title" data-i18n="education.bachelor.title">
+                  Bacharelado em Sistemas de Informação
+                </h3>
+<p class="edu-meta__info" data-i18n-html="education.bachelor.meta">
+                  UFOP — João Monlevade<br/>
+                  Mar/2018 – Abr/2025<br/>
+<span class="small">
+                    Concluído
+                  </span>
+</p>
+</header>
+<div class="edu-desc">
+<p class="edu-desc__line" data-i18n-html="education.bachelor.thesis">
+<strong>TCC:</strong>
+                  Desenvolvimento de um modelo preditivo para identificação
+                  de uso dos serviços de saúde com base nas características
+                  de brasileiros.
+                </p>
+<p class="small" data-i18n="education.bachelor.description">
+                  Desenvolvimento e validação de um modelo com dados da
+                  Pesquisa Nacional de Saúde 2019, combinando segmentação de
+                  perfis, classificação supervisionada e validação cruzada
+                  para analisar padrões de utilização dos serviços de saúde.
+                </p>
+</div>
+</article>
+<!-- TÉCNICO -->
+<article class="edu">
+<header class="edu-meta">
+<h3 class="edu-meta__title" data-i18n="education.technical.title">
+                  Técnico em Metalurgia
+                </h3>
+<p class="edu-meta__info" data-i18n-html="education.technical.meta">
+                  IFMG — Ouro Branco<br/>
+                  Fev/2015 – Dez/2017<br/>
+<span class="small">
+                    Concluído
+                  </span>
+</p>
+</header>
+<div class="edu-desc">
+<p class="small" data-i18n="education.technical.description">
+                  Formação voltada a processos metalúrgicos, desenho técnico,
+                  segurança, controle de qualidade, planejamento de produção
+                  e análise de custos aplicados ao ambiente industrial.
+                </p>
+</div>
+</article>
+</section>
+<!-- ====================================================
+            CURSOS COMPLEMENTARES
+          ===================================================== -->
+<section aria-labelledby="titulo-cursos" class="block">
+<div class="block-title">
+<h2 data-i18n="sections.courses" id="titulo-cursos">
+                Cursos
+              </h2>
+<span aria-hidden="true" class="rule"></span>
+</div>
+<ul class="list" role="list">
+<li data-i18n-html="courses.excel">
+<strong>Excel Intermediário</strong>
+                — UFOP, João Monlevade–MG
+                — Set/2018 a Dez/2018
+                — <span class="small">20 horas</span>
+</li>
+<li data-i18n-html="courses.corelDraw">
+<strong>CorelDRAW Básico</strong>
+                — UFOP, João Monlevade–MG
+                — Set/2018 a Dez/2018
+                — <span class="small">20 horas</span>
+</li>
+<li data-i18n-html="courses.proteus">
+<strong>Proteus Intermediário</strong>
+                — UFOP, João Monlevade–MG
+                — Jun/2018 a Fev/2019
+                — <span class="small">20 horas</span>
+</li>
+</ul>
+</section>
+<!-- ====================================================
+            ATIVIDADES COMPLEMENTARES
+          ===================================================== -->
+<section aria-labelledby="titulo-atividades" class="block">
+<div class="block-title">
+<h2 data-i18n="sections.activities" id="titulo-atividades">
+                Atividades Complementares
+              </h2>
+<span aria-hidden="true" class="rule"></span>
+</div>
+<ul class="list" role="list">
+<li data-i18n-html="activities.projects">
+<strong>Projetos de extensão e pesquisa:</strong>
+                EcoPilhas, Reciclagem com o uso da Matemática,
+                Inclusão Digital para Educação de Jovens e Adultos
+                e RECIMAT.
+              </li>
+<li data-i18n-html="activities.events">
+<strong>Eventos e participação acadêmica:</strong>
+                simulações de organismos internacionais como delegado,
+                organização da Semana Nacional de Ciência e Tecnologia,
+                Workshop Conexão Sicoob e Laboratório de Inovação.
+              </li>
+</ul>
+</section>
+</section>
+</div>
+</main>
+</div>
+<!--
+    A ordem dos scripts é importante:
+    1. i18n.js carrega e aplica o idioma selecionado;
+    2. export-client.js solicita ao servidor o PDF no idioma atual.
+  -->
+  <script src="scripts/i18n.js"></script>
+  <script src="scripts/export-client.js"></script></body>
 </html>
